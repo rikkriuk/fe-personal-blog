@@ -9,12 +9,15 @@ const RecentBlogContainer = () => {
    return (
       <section className="py-5">
          <h2 className={`text-2xl my-10 font-semibold ${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"}`}>Recent blog posts</h2>
-         <div className="flex gap-10 flex-col xl:flex-row">
-            <BlogVerticalComponent />
-            <div className="w-full flex flex-col gap-9">
-               <BlogHorizontalComponent />
-               <BlogHorizontalComponent />
+         <div className="flex gap-10 flex-col">
+            <div className="flex flex-col gap-10 xl:flex-row">
+               <BlogVerticalComponent />
+               <div className="w-full flex flex-col gap-9">
+                  <BlogHorizontalComponent />
+                  <BlogHorizontalComponent />
+               </div>
             </div>
+            <BlogVerticalComponent type={"horizontal"} />
          </div>
       </section>
    )

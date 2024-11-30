@@ -1,13 +1,16 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-const BlogVerticalComponent = () => {
+const BlogVerticalComponent = ({ type }) => {
    const { theme } = useSelector((state) => state);
 
    return (
-      <div className="w-full">
-         <img src="https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg" alt="image" className="w-full h-[228px] object-cover" />
+      <div className={`w-full ${type === "horizontal" && "block gap-10 mt-4 xl:flex"}`}>
+         <div className={`w-full ${type === "horizontal" ? "xl:w-1/2" : "md:w-full"}`}>
+            <img src="https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg" alt="image" className="w-full h-[228px] object-cover" />
+         </div>
 
          <div className="mt-6">
             <span className="text-[#6941C6] text-sm font-semibold">Olivia Rhye • 1 Jan 2023</span>
@@ -31,6 +34,10 @@ const BlogVerticalComponent = () => {
          </div>
       </div>
    )
+}
+
+BlogVerticalComponent.propTypes = {
+   type: PropTypes.string,
 }
 
 export default BlogVerticalComponent;
