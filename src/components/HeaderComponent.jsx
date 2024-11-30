@@ -31,7 +31,7 @@ const HeaderComponent = () => {
                   <Link to={"https://www.instagram.com/amiyourkey/"} className="text-white md:hidden md:text-primary-color mb-4 font-medium">Riki Ridwan</Link>
 
                   <li>
-                     <Link className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/blog"}>
+                     <Link className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/"}>
                      Blog
                      </Link>
                   </li>
