@@ -6,7 +6,7 @@ import AllBlogContainer from "../containers/AllBlogContainer";
 const HomePage = () => {
    return (
       <main>
-         <HeroComponent />
+         <HeroComponent text={"THE BLOG"} />
          <RecentBlogContainer />
          <AllBlogContainer />
       </main>

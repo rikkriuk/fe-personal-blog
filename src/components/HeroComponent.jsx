@@ -1,17 +1,22 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { useSelector } from "react-redux";
 
-const HeroComponent = () => {
+const HeroComponent = ({ text }) => {
    const { theme } = useSelector((state) => state);
 
    return (
-      <section className="border-t-2 border-b-2 border-gray-300">
-         <h2 className={`${theme === "light" ? "text-primary-color" : "text-white"} font-bolf text-justify w-full text-[16.5vw] whitespace-nowrap`}>
-            THE BLOG
+      <section className="border-t-2 border-b-2 border-gray-300 flex overflow-hidden">
+         <h2 className={`${theme === "light" ? "text-primary-color" : "text-white"} font-bolf text-center w-full text-[16.5vw] whitespace-nowrap`}>
+            {text}
          </h2>
       </section>
 
    )
+}
+
+HeroComponent.propTypes = {
+   text: PropTypes.string.isRequired,
 }
 
 export default HeroComponent;
