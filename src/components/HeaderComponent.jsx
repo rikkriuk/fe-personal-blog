@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "../redux/slices/themeSlice";
 
@@ -18,7 +19,7 @@ const HeaderComponent = () => {
             <h1 className={`text-2xl font-semibold ${theme === "light" ? "text-primary-color" : "text-white"}`}>LumosBlog</h1>
 
             <button className={`md:hidden xl:hidden ${theme === "light" ? "text-primary-color" : "text-white"}`} onClick={handleOpen}>
-               <FaBars size={24} />
+               <FiMenu size={24} />
             </button>
             
             <nav className={`bg-dark ${theme === "light" ? "md:bg-white" : "bg-dark"} md:static fixed left-0 right-0 top-0 bottom-0 md:translate-x-0 ${isOpen ? "translate-x-0" : "translate-x-[800px]"} flex items-center flex-col justify-center md:flex-row gap-10`}>

@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { FaArrowUp } from "react-icons/fa";
+import { FiArrowUp } from "react-icons/fi";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const BlogVerticalComponent = ({ type }) => {
    const { theme } = useSelector((state) => state);
@@ -16,9 +17,9 @@ const BlogVerticalComponent = ({ type }) => {
             <span className="text-[#6941C6] text-sm font-semibold">Olivia Rhye • 1 Jan 2023</span>
 
             <div className="flex justify-between my-5">
-               <h3 className={`${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"} text-2xl font-semibold`}>UX review presentations</h3>
+               <Link to={"/"} className={`${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"} text-2xl font-semibold`}>UX review presentations</Link>
                <div className="rotate-45">
-                  <FaArrowUp className="text-black" size={24} />
+                  <FiArrowUp className="text-black" size={24} />
                </div>
             </div>
 

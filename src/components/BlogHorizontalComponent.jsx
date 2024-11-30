@@ -8,7 +8,7 @@ const BlogHorizontalComponent = () => {
    return (
       <section className="block md:flex gap-10">
          <div className="w-full md:w-1/2">
-            <img src="https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg" className="w-full h-[200px] object-cover" alt="image" />
+            <img src="https://letsenhance.io/static/a31ab775f44858f1d1b80ee51738f4f3/11499/EnhanceAfter.jpg" className="w-full h-full object-cover" alt="image" />
          </div>
 
          <div className="mt-6 md:mt-0 w-full md:w-1/2">
