@@ -23,13 +23,13 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
    const blogSchema = blogDetail && !loading ? {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": blogDetail.title,
+      "headline": blogDetail?.title,
       "author": {
          "@type": "Person",
-         "name": blogDetail.author || "Anonymous",
+         "name": blogDetail?.author || "Anonymous",
       },
-      "datePublished": blogDetail.date,
-      "articleSection": blogDetail.categories?.join(", ") || "Uncategorized",
+      "datePublished": blogDetail?.date,
+      "articleSection": blogDetail?.categories?.join(", ") || "Uncategorized",
       "articleBody": cleanHTML.replace(/<[^>]+>/g, ''),
    } : null;
 

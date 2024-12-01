@@ -13,15 +13,15 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
    const blogSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
-      "headline": blogs.title,
-      "image": blogs.thumb,
+      "headline": blogs?.title,
+      "image": blogs?.thumb,
       "author": {
          "@type": "Person",
-         "name": blogs.author,
+         "name": blogs?.author,
       },
-      "datePublished": blogs.time,
-      "description": blogs.desc,
-      "url": `/blog/${blogs.key}`,
+      "datePublished": blogs?.time,
+      "description": blogs?.desc,
+      "url": `/blog/${blogs?.key}`,
    };
 
    return (
