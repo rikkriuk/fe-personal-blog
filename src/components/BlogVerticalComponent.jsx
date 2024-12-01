@@ -26,7 +26,7 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
 
    return (
       <div className={`w-full ${type === "horizontal" && "block gap-10 mt-5 xl:flex"}`}>
-         <div className={`w-full ${type === "horizontal" ? "xl:w-1/2 lg:w-1/2" : "md:w-full"}`}>
+         <div className={`w-full ${type === "horizontal" ? "xl:w-1/2 lg:w-1/2" : "md:w-full mb-7"}`}>
             {loading ? (
                <Skeleton height={228} className="w-full skeleton-shimmer" />
             ) : (

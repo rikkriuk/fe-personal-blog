@@ -28,7 +28,7 @@ const HeaderComponent = () => {
                <FiMenu size={24} />
             </button>
             
-            <nav className={`bg-[#121212] z-50 ${theme === "light" ? "md:bg-white" : "bg-[#121212]"} md:static fixed left-0 right-0 top-0 bottom-0 md:translate-x-0 ${isOpen ? "translate-x-0" : "translate-x-[800px]"} flex items-center flex-col justify-center md:flex-row gap-10`}>
+            <nav className={`bg-[#121212] z-50 ${theme === "light" ? "md:bg-white" : "md:bg-[#090D1F]"} md:static fixed left-0 right-0 top-0 bottom-0 md:translate-x-0 ${isOpen ? "translate-x-0" : "translate-x-[800px]"} flex items-center flex-col justify-center md:flex-row gap-10`}>
                <ul className="flex flex-col md:flex-row items-center gap-5">
                   <button data-testid="close-menu" className="absolute right-7 top-10 transition duration-150 hover:text-red-500 md:hidden xl:hidden text-white" onClick={handleOpen}>
                      <FaTimes size={24} />
@@ -37,15 +37,15 @@ const HeaderComponent = () => {
                   <Link to={"https://www.instagram.com/amiyourkey/"} className="text-white md:hidden md:text-primary-color mb-4 font-medium">John Doe</Link>
 
                   <li>
-                     <Link data-testid="home-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/"}>
+                     <Link data-testid="home-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color hover:text-gray-600" : "md:text-white hover:text-gray-400"} text-sm p-2 transition duration-500 ease-in-out`} to={"/"}>
                      Blog
                      </Link>
                   </li>
                   <li>
-                     <Link data-testid="about-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/about"}>About</Link>
+                     <Link data-testid="about-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color hover:text-gray-600" : "md:text-white hover:text-gray-400"} text-sm p-2 transition duration-500 ease-in-out`} to={"/about"}>About</Link>
                   </li>
                   <li>
-                     <Link data-testid="newsletter-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/newsletter"}>Newsletter</Link>
+                     <Link data-testid="newsletter-link" onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color hover:text-gray-600" : "md:text-white hover:text-gray-400"} text-sm p-2 transition duration-500 ease-in-out`} to={"/newsletter"}>Newsletter</Link>
                   </li>
 
                   {theme === "light" ? (
