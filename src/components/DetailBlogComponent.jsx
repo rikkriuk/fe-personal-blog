@@ -18,6 +18,20 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
 
    const getRandomStyle = () => styles[Math.floor(Math.random() * styles.length)];
 
+   // Schema JSON-LD
+   const blogSchema = blogDetail && !loading ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": blogDetail.title,
+      "author": {
+         "@type": "Person",
+         "name": blogDetail.author || "Anonymous",
+      },
+      "datePublished": blogDetail.date,
+      "articleSection": blogDetail.categories?.join(", ") || "Uncategorized",
+      "articleBody": cleanHTML.replace(/<[^>]+>/g, ''),
+   } : null;
+
    return (
       <section>
          <span className="text-[#6941C6]">
@@ -56,6 +70,13 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
          <div className="mt-24 mb-5">
             {loading ? <Skeleton height={200} className="w-full skeleton-shimmer" /> : <NewsletterComponent />}
          </div>
+
+         {/* Schema */}
+         {!loading && blogSchema && (
+            <script type="application/ld+json">
+               {JSON.stringify(blogSchema)}
+            </script>
+         )}
       </section>
    );
 }

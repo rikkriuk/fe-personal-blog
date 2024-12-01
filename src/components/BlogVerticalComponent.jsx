@@ -9,6 +9,21 @@ import { Link } from "react-router-dom";
 const BlogVerticalComponent = ({ type, blogs, loading }) => {
    const { theme } = useSelector((state) => state.theme);
 
+   // Schema JSON-LD
+   const blogSchema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": blogs.title,
+      "image": blogs.thumb,
+      "author": {
+         "@type": "Person",
+         "name": blogs.author,
+      },
+      "datePublished": blogs.time,
+      "description": blogs.desc,
+      "url": `/blog/${blogs.key}`,
+   };
+
    return (
       <div className={`w-full ${type === "horizontal" && "block gap-10 mt-5 xl:flex"}`}>
          <div className={`w-full ${type === "horizontal" ? "xl:w-1/2 lg:w-1/2" : "md:w-full"}`}>
@@ -67,6 +82,13 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
                )}
             </div>
          </div>
+
+         {/* Schema */}
+         {!loading && (
+            <script type="application/ld+json">
+               {JSON.stringify(blogSchema)}
+            </script>
+         )}
       </div>
    );
 };

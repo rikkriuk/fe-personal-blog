@@ -8,6 +8,22 @@ import PropTypes from "prop-types";
 const BlogHorizontalComponent = ({ blogs, loading }) => {
    const { theme } = useSelector((state) => state.theme);
 
+   // Schema JSON-LD
+   const blogSchema = blogs && !loading ? {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": blogs?.title,
+      "image": blogs?.thumb,
+      "author": {
+         "@type": "Person",
+         "name": blogs?.author || "Anonymous"
+      },
+      "datePublished": blogs?.time,
+      "description": blogs?.desc || "No description available",
+      "articleSection": blogs?.tag || "Uncategorized",
+      "url": `/blog/${blogs?.key}`,
+   } : null;
+
    return (
       <section className="block md:flex gap-10">
          <div className="w-full md:w-1/2">
@@ -56,6 +72,13 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
                )}
             </div>
          </div>
+
+         {/* Schema */}
+         {!loading && blogSchema && (
+            <script type="application/ld+json">
+               {JSON.stringify(blogSchema)}
+            </script>
+         )}
       </section>
    );
 };
