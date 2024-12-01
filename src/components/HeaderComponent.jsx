@@ -28,7 +28,7 @@ const HeaderComponent = () => {
                <FiMenu size={24} />
             </button>
             
-            <nav className={`bg-[#121212] ${theme === "light" ? "md:bg-white" : "bg-[#121212]"} md:static fixed left-0 right-0 top-0 bottom-0 md:translate-x-0 ${isOpen ? "translate-x-0" : "translate-x-[800px]"} flex items-center flex-col justify-center md:flex-row gap-10`}>
+            <nav className={`bg-[#121212] z-50 ${theme === "light" ? "md:bg-white" : "bg-[#121212]"} md:static fixed left-0 right-0 top-0 bottom-0 md:translate-x-0 ${isOpen ? "translate-x-0" : "translate-x-[800px]"} flex items-center flex-col justify-center md:flex-row gap-10`}>
                <ul className="flex flex-col md:flex-row items-center gap-5">
                   <button className="absolute right-7 top-10 transition duration-150 hover:text-red-500 md:hidden xl:hidden text-white" onClick={handleOpen}>
                      <FaTimes size={24} />
