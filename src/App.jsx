@@ -8,6 +8,7 @@ import AboutPage from "./pages/AboutPage";
 import NewsletterPage from "./pages/NewsletterPage";
 import DetailPage from "./pages/DetailPage";
 import "./App.css"
+import NotFoundComponent from "./components/NotFoundComponent";
 
 export default function App() {
   const { theme } = useSelector((state) => state.theme);
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
           <Route path="/blog/:year/:month/:day/:slug" element={<DetailPage />} />
+          <Route path="/*" element={<NotFoundComponent />} />
         </Routes>
         <FooterComponent />
       </div>

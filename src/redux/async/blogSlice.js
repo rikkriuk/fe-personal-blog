@@ -44,6 +44,7 @@ const blogsSlice = createSlice({
     // fetch recent blogs
     builder.addCase(fetchRecentBlogs.pending, (state) => {
       state.loading = true;
+      state.error = null;
     });
     builder.addCase(fetchRecentBlogs.fulfilled, (state, action) => {
       state.loading = false;
@@ -57,6 +58,7 @@ const blogsSlice = createSlice({
     // fetch all blogs
     builder.addCase(fetchAllBlogs.pending, (state) => {
       state.loading = true;
+      state.error = null;
     });
     builder.addCase(fetchAllBlogs.fulfilled, (state, action) => {
       state.loading = false;
@@ -70,6 +72,7 @@ const blogsSlice = createSlice({
     // fetch blog detail
     builder.addCase(fetchBlogsDetail.pending, (state) => {
       state.loading = true;
+      state.error = null;
     });
     builder.addCase(fetchBlogsDetail.fulfilled, (state, action) => {
       state.loading = false;
@@ -77,6 +80,7 @@ const blogsSlice = createSlice({
     });
     builder.addCase(fetchBlogsDetail.rejected, (state, action) => {
       state.loading = false;
+      console.log(action.error.message);
       state.error = action.error.message;
     });
   },

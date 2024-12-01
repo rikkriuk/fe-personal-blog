@@ -5,6 +5,7 @@ import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { fetchAllBlogs } from "../redux/async/blogSlice";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import NotFoundComponent from "../components/NotFoundComponent";
 
 const AllBlogContainer = ({ sumItem = 6, preview = false }) => {
    const [page, setPage] = useState(1);  // Add page state
@@ -23,6 +24,8 @@ const AllBlogContainer = ({ sumItem = 6, preview = false }) => {
    const handlePreviousPage = () => {
       setPage((prevPage) => (prevPage === 1 ? 5 : prevPage - 1));
    };
+
+   if (error) return <NotFoundComponent text="Something went wrong!" />;
 
    return (
       <section className="py-5">

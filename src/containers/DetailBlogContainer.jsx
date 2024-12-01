@@ -4,6 +4,7 @@ import BlogVerticalComponent from "../components/BlogVerticalComponent";
 import DetailBlogComponent from "../components/DetailBlogComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogsDetail, fetchRecentBlogs } from "../redux/async/blogSlice";
+import NotFoundComponent from "../components/NotFoundComponent";
 
 const DetailBlogContainer = () => {
    const { year, month, day, slug } = useParams();
@@ -15,6 +16,8 @@ const DetailBlogContainer = () => {
       dispatch(fetchBlogsDetail(blogKey));
       dispatch(fetchRecentBlogs());
    }, [dispatch, year, month, day, slug]);
+
+   if (error || !blogDetail) return <NotFoundComponent text="Blog not found" />;
 
    return (
       <section className="grid grid-cols-1 md:grid-cols-[3fr_7fr] gap-10 mt-10">

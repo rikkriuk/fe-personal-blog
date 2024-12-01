@@ -3,6 +3,7 @@ import BlogVerticalComponent from "../components/BlogVerticalComponent";
 import BlogHorizontalComponent from "../components/BlogHorizontalComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRecentBlogs } from "../redux/async/blogSlice";
+import NotFoundComponent from "../components/NotFoundComponent";
 
 const RecentBlogContainer = () => {
    const { blogs, loading, error } = useSelector((state) => state.blogs);
@@ -12,6 +13,8 @@ const RecentBlogContainer = () => {
    useEffect(() => {
       dispatch(fetchRecentBlogs())
    }, [])
+
+   if (error) return <NotFoundComponent text="Something went wrong!" />;
 
    const selectedBlogs = blogs.filter((_, index) => index >= 0 && index <= 3);
    return (

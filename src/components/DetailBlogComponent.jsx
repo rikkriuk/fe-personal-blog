@@ -63,7 +63,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
                   <Skeleton count={5} height={15} className="skeleton-shimmer" />
                </>
             ) : (
-               cleanHTML && <div className={`blog-detail-content ${theme && "content-dark"}`} dangerouslySetInnerHTML={{ __html: cleanHTML }} />
+               cleanHTML && <div className={`blog-detail-content ${theme === "dark" && "content-dark"}`} dangerouslySetInnerHTML={{ __html: cleanHTML }} />
             )}
          </div>
 
