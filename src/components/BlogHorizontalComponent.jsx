@@ -35,11 +35,11 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
          </div>
 
          <div className="mt-6 md:mt-0 w-full md:w-1/2">
-            <span className="text-[#6941C6] text-sm font-semibold">
+            <span className="text-[#6941C6] text-sm font-semibold" data-testid="react-loading-skeleton">
                {loading ? (
                   <Skeleton width={120} height={20} />
                ) : (
-                  `${blogs?.author} • ${blogs?.time}`
+                  `${blogs?.author || "Anonymous"} • ${blogs?.time || "Unknown time"}`
                )}
             </span>
 
@@ -51,7 +51,7 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
                   {loading ? (
                      <Skeleton width={200} height={30} />
                   ) : (
-                     `${blogs?.title}`
+                     `${blogs?.title || "No title available"}`
                   )}
                </Link>
             </div>
@@ -60,7 +60,7 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
                {loading ? (
                   <Skeleton count={3} width="100%" height={15} />
                ) : (
-                  `${blogs?.desc}`
+                  `${blogs?.desc || "No description available"}`
                )}
             </p>
 
@@ -68,7 +68,7 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
                {loading ? (
                   <Skeleton width={80} height={25} />
                ) : (
-                  <span className="text-[#C11574] bg-[#FDF2FA] text-sm font-medium rounded-full px-4 py-1">{blogs?.tag}</span>
+                  <span className="text-[#C11574] bg-[#FDF2FA] text-sm font-medium rounded-full px-4 py-1">{blogs?.tag || "Uncategorized"}</span>
                )}
             </div>
          </div>

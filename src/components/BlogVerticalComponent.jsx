@@ -39,7 +39,7 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
          </div>
 
          <div className={`${type === "horizontal" ? "xl:w-1/2 lg:w-1/2" : "md:w-full"}`}>
-            <span className="text-[#6941C6] text-sm font-semibold">
+            <span className="text-[#6941C6] text-sm font-semibold" data-testid="react-loading-skeleton">
                {loading ? <Skeleton width={100} className="skeleton-shimmer" /> : `${blogs?.author} • ${blogs?.time}`}
             </span>
 

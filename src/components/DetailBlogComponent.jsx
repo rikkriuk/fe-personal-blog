@@ -35,7 +35,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
 
    return (
       <section>
-         <span className="text-[#6941C6]">
+         <span className="text-[#6941C6]" data-testid="skeleton-container">
             {loading ? <Skeleton width={150} className="skeleton-shimmer" /> : blogDetail?.date}
          </span>
          
@@ -64,7 +64,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
                   <Skeleton count={5} height={15} className="skeleton-shimmer" />
                </>
             ) : (
-               cleanHTML && <div className={`blog-detail-content ${theme === "dark" && "content-dark"}`} dangerouslySetInnerHTML={{ __html: cleanHTML }} />
+               cleanHTML && <div className={`blog-detail-content ${theme === "dark" && "content-dark"}`} data-testid="blog-content" dangerouslySetInnerHTML={{ __html: cleanHTML }} />
             )}
          </div>
 
@@ -74,7 +74,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
 
          {/* Schema */}
          {!loading && blogSchema && (
-            <script type="application/ld+json">
+            <script type="application/ld+json" data-testid="json-ld-schema">
                {JSON.stringify(blogSchema)}
             </script>
          )}

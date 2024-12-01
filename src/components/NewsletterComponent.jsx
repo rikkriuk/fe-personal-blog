@@ -6,7 +6,7 @@ import { setLoading, setTimeoutSuccess, subscribe } from "../redux/async/subscri
 
 const NewsletterComponent = () => {
    const { theme } = useSelector((state) => state.theme);
-   const { loading, success } = useSelector((state) => state.subscribe);
+   const { loading, success } = useSelector((state) => state.subscribe || {});
    const [email, setEmail] = useState("");
    const dispatch = useDispatch();
 
