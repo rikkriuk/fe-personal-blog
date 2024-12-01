@@ -17,10 +17,12 @@ const AllBlogContainer = ({ sumItem = 6, preview = false }) => {
       dispatch(fetchAllBlogs(page));
    }, [page, dispatch]);
 
+   // Function to handle page change
    const handleNextPage = () => {
       setPage((prevPage) => (prevPage === 5 ? 1 : prevPage + 1));
    };
 
+   // Function to handle page change
    const handlePreviousPage = () => {
       setPage((prevPage) => (prevPage === 1 ? 5 : prevPage - 1));
    };

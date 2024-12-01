@@ -10,6 +10,7 @@ const initialState = {
   error: null,
 };
 
+// Fetch recent blogs
 export const fetchRecentBlogs = createAsyncThunk(
   "blogs/fetchRecentBlogs",
   async () => {
@@ -18,6 +19,7 @@ export const fetchRecentBlogs = createAsyncThunk(
   }
 );
 
+// Fetch blogs detail
 export const fetchBlogsDetail = createAsyncThunk(
   "blogs/fetchBlogsDetail",
   async (id) => {
@@ -26,6 +28,7 @@ export const fetchBlogsDetail = createAsyncThunk(
   }
 );
 
+// Fetch all blogs
 export const fetchAllBlogs = createAsyncThunk(
   "blogs/fetchAllBlogs",
   async (page) => {

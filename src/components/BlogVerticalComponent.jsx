@@ -93,6 +93,7 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
    );
 };
 
+// Props validation
 BlogVerticalComponent.propTypes = {
    type: PropTypes.string,
    blogs: PropTypes.object,

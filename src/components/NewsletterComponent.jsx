@@ -10,11 +10,13 @@ const NewsletterComponent = () => {
    const [email, setEmail] = useState("");
    const dispatch = useDispatch();
 
+   // Function to handle input changes
    const handleChange = (e) => {
       const clean = DOMPurify.sanitize(e.target.value);
       setEmail(clean);
    }
 
+   // Function to handle form submission
    const handleSubmit = async (e) => {
       e.preventDefault();
       dispatch(setLoading(true));

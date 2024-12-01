@@ -15,6 +15,7 @@ const NotFoundComponent = ({ text = "Not Found" }) => {
    )
 }
 
+// Props validation
 NotFoundComponent.propTypes = {
    text: PropTypes.string,
 }

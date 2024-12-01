@@ -10,10 +10,12 @@ const HeaderComponent = () => {
    const { theme } = useSelector((state) => state.theme);
    const dispatch = useDispatch();
 
+   // Function to close/open the menu
    const handleOpen = () => {
       setIsOpen(!isOpen);
    };
-
+   
+   // Function to close the menu when a link is clicked
    const handleLink = () => {
       setIsOpen(false);
    };

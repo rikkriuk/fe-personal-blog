@@ -16,6 +16,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
    const { theme } = useSelector((state) => state.theme);
    const cleanHTML = DOMPurify.sanitize(blogDetail?.content);
 
+   // Function to get a random style
    const getRandomStyle = () => styles[Math.floor(Math.random() * styles.length)];
 
    // Schema JSON-LD
@@ -81,6 +82,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
    );
 }
 
+// Props validation
 DetailBlogComponent.propTypes = {
    blogDetail: PropTypes.object.isRequired,
    loading: PropTypes.bool.isRequired,

@@ -8,6 +8,7 @@ const initialState = {
   success: false,
 };
 
+// Post subscribe
 export const subscribe = createAsyncThunk(
   "subscribe/subscribe",
   async (data) => {

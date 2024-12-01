@@ -83,6 +83,7 @@ const BlogHorizontalComponent = ({ blogs, loading }) => {
    );
 };
 
+// Props validation
 BlogHorizontalComponent.propTypes = {
    blogs: PropTypes.object,
    loading: PropTypes.bool,

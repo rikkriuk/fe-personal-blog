@@ -15,6 +15,7 @@ const HeroComponent = ({ text }) => {
    )
 }
 
+// Props validation
 HeroComponent.propTypes = {
    text: PropTypes.string.isRequired,
 }
