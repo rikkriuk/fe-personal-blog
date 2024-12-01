@@ -5,7 +5,7 @@ import HeadComponent from "../components/HeadComponent";
 
 const NewsletterPage = () => {
    return (
-      <main>
+      <main className="newsletter-page">
          <HeadComponent
             title="Newsletter - My Blog"
             description="Stay updated with the latest news and articles from My Blog."

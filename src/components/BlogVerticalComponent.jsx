@@ -46,6 +46,7 @@ const BlogVerticalComponent = ({ type, blogs, loading }) => {
             <div className="flex justify-between my-5">
                <Link
                   to={`/blog/${blogs?.key}`}
+                  data-testid="blog-post"
                   className={`${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"} text-2xl font-semibold line-clamp-2 ${loading && "disable"}`}
                >
                {loading ? (

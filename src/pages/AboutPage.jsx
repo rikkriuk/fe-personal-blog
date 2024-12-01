@@ -5,7 +5,7 @@ import HeadComponent from "../components/HeadComponent";
 
 const AboutPage = () => {
    return (
-      <main>
+      <main className="about-page">
          <HeadComponent
             title="About - My Blog"
             description="Learn more about the mission and vision of My Blog."

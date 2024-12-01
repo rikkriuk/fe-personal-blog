@@ -41,10 +41,10 @@ const NewsletterComponent = () => {
 
          <form onSubmit={handleSubmit} className="mt-5 flex flex-col">
             <div className="flex flex-col md:flex-row items-center gap-0 lg:gap-5">
-               <input type="email" value={email} onChange={handleChange} placeholder="Enter your email" className={`w-96 border text-[#667085] focus:outline-none border-[#C0C5D0] rounded-md p-2 px-4 my-5 text-base ${loading && "cursor-wait"}`}  disabled={loading} required />
-               <button type="submit" className={`bg-[#7F56D9] text-white py-2 px-4 text-base font-medium rounded-md ${loading && "cursor-wait"}`} disabled={loading}>Subscribe</button>
+               <input data-testid="subscribe-input" type="email" value={email} onChange={handleChange} placeholder="Enter your email" className={`w-96 border text-[#667085] focus:outline-none border-[#C0C5D0] rounded-md p-2 px-4 my-5 text-base ${loading && "cursor-wait"}`}  disabled={loading} required />
+               <button data-testid="subscribe-button" type="submit" className={`bg-[#7F56D9] text-white py-2 px-4 text-base font-medium rounded-md ${loading && "cursor-wait"}`} disabled={loading}>Subscribe</button>
             </div>
-            {success && <p className="text-green-700 text-center lg:text-start my-2 text-sm">Subscribed successfully!</p>}
+            {success && <p data-testid="success-message" className="text-green-700 text-center lg:text-start my-2 text-sm">Subscribed successfully!</p>}
             <p className={`text-sm text-center lg:text-start ${theme === "light" ? "text-primary-color" : "text-[#C0C5D0]"}`}>We care about your data in our <Link to="/" className="underline">privacy policy</Link></p>
          </form>
       </section>
