@@ -7,7 +7,7 @@ import { setTheme } from "../redux/slices/themeSlice";
 
 const HeaderComponent = () => {
    const [isOpen, setIsOpen] = useState(false);
-   const { theme } = useSelector((state) => state);
+   const { theme } = useSelector((state) => state.theme);
    const dispatch = useDispatch();
 
    const handleOpen = () => {

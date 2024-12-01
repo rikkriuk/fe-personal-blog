@@ -7,9 +7,10 @@ import FooterComponent from "./components/FooterComponent";
 import AboutPage from "./pages/AboutPage";
 import NewsletterPage from "./pages/NewsletterPage";
 import DetailPage from "./pages/DetailPage";
+import "./App.css"
 
 export default function App() {
-  const { theme } = useSelector((state) => state);
+  const { theme } = useSelector((state) => state.theme);
 
   return (
     <Router>
@@ -19,7 +20,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
-          <Route path="/blog/:id" element={<DetailPage />} />
+          <Route path="/blog/:year/:month/:day/:slug" element={<DetailPage />} />
         </Routes>
         <FooterComponent />
       </div>

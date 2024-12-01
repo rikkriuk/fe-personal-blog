@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const NewsletterComponent = () => {
-   const { theme } = useSelector((state) => state);
+   const { theme } = useSelector((state) => state.theme);
 
    return (
       <section className="flex justify-center flex-col items-center">

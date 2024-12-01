@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const AboutUserComponent = () => {
-   const { theme } = useSelector((state) => state);
+   const { theme } = useSelector((state) => state.theme);
 
    return (
       <section className="flex flex-col gap-10 md:gap-13 mt-10">

@@ -3,7 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const HeroComponent = ({ text }) => {
-   const { theme } = useSelector((state) => state);
+   const { theme } = useSelector((state) => state.theme);
 
    return (
       <section className="border-t-2 border-b-2 border-gray-300 flex overflow-hidden">

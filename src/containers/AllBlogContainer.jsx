@@ -1,19 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import BlogVerticalComponent from "../components/BlogVerticalComponent";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { fetchAllBlogs } from "../redux/async/blogSlice";
 
 const AllBlogContainer = () => {
-   const { theme } = useSelector((state) => state);
+   const { blogs, loading, error } = useSelector((state) => state.blogs);
+   const { theme } = useSelector((state) => state.theme);
+   const dispatch = useDispatch();
+
+   useEffect(() => {
+      dispatch(fetchAllBlogs())
+   }, [])
 
    return (
       <section className="py-5">
          <h2 className={`text-2xl my-10 font-semibold ${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"}`}>All blog posts</h2>
 
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 border-b pb-10">
-            {Array.from({ length: 6}).map((_, index) => {
-               return <BlogVerticalComponent key={index} />
-            })}
+            {blogs?.map((blog) => (
+               <BlogVerticalComponent key={blog.key} blogs={blog} loading={loading} />
+            ))}
          </div>
 
          <div className="flex flex-col items-center gap-5 md:flex-row md:justify-between mt-10">

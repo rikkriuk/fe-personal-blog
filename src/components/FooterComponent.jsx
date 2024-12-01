@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
-   const { theme } = useSelector((state) => state);
+   const { theme } = useSelector((state) => state.theme);
 
    return (
         <footer className={`flex flex-col-reverse md:flex-row items-center gap-4 py-5 ${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"} text-sm mt-20 lg:mt-10`}>
