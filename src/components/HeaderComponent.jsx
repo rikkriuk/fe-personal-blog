@@ -14,6 +14,10 @@ const HeaderComponent = () => {
       setIsOpen(!isOpen);
    };
 
+   const handleLink = () => {
+      setIsOpen(false);
+   };
+
    return (
         <header className={`flex justify-between items-center py-10 ${theme === "light" ? "bg-white" : "bg-dark"}`}>
             <h1 className={`text-2xl font-semibold ${theme === "light" ? "text-primary-color" : "text-white"}`}>LumosBlog</h1>
@@ -28,18 +32,18 @@ const HeaderComponent = () => {
                      <FaTimes size={24} />
                   </button>
 
-                  <Link to={"https://www.instagram.com/amiyourkey/"} className="text-white md:hidden md:text-primary-color mb-4 font-medium">Riki Ridwan</Link>
+                  <Link to={"https://www.instagram.com/amiyourkey/"} className="text-white md:hidden md:text-primary-color mb-4 font-medium">John Doe</Link>
 
                   <li>
-                     <Link className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/"}>
+                     <Link onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/"}>
                      Blog
                      </Link>
                   </li>
                   <li>
-                     <Link className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/about"}>About</Link>
+                     <Link onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/about"}>About</Link>
                   </li>
                   <li>
-                     <Link className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/newsletter"}>Newsletter</Link>
+                     <Link onClick={handleLink} className={`text-white ${theme === "light" ? "md:text-primary-color" : "md:text-white"} text-sm p-2 transition duration-500 ease-in-out hover:text-gray-900`} to={"/newsletter"}>Newsletter</Link>
                   </li>
 
                   {theme === "light" ? (

@@ -6,7 +6,7 @@ const NewsletterPage = () => {
    return (
       <main>
          <NewsletterComponent />
-         <AllBlogContainer />
+         <AllBlogContainer sumItem={3} preview={true} />
       </main>
    )
 }

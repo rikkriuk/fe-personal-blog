@@ -36,3 +36,7 @@
   line-height: 1.5;
   margin-bottom: 16px;
 }
+
+.content-dark p {
+  color: #c0c5d0;
+}

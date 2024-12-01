@@ -28,8 +28,10 @@ export const fetchBlogsDetail = createAsyncThunk(
 
 export const fetchAllBlogs = createAsyncThunk(
   "blogs/fetchAllBlogs",
-  async () => {
-    const response = await axios.get(`${API_URL}/games/news?page=1&search`);
+  async (page) => {
+    const response = await axios.get(
+      `${API_URL}/games/news?page=${page}&search`
+    );
     return response.data;
   }
 );

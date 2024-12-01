@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import DOMPurify from 'dompurify';
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css"
+import { useSelector } from "react-redux";
 
 const styles = [
    "text-[#6941C6] bg-[#F9F5FF]",
@@ -12,6 +13,7 @@ const styles = [
 ];
 
 const DetailBlogComponent = ({ blogDetail, loading }) => {
+   const { theme } = useSelector((state) => state.theme);
    const cleanHTML = DOMPurify.sanitize(blogDetail?.content);
 
    const getRandomStyle = () => styles[Math.floor(Math.random() * styles.length)];
@@ -22,7 +24,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
             {loading ? <Skeleton width={150} className="skeleton-shimmer" /> : blogDetail?.date}
          </span>
          
-         <h2 className="text-4xl font-bold my-5">
+         <h2 className={`text-4xl font-bold my-5 ${theme === "light" ? "text-primary-color" : "text-[#FFFFFF]"}`}>
             {loading ? <Skeleton height={40} className="w-full skeleton-shimmer" /> : blogDetail?.title}
          </h2>
 
@@ -30,7 +32,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
             {loading ? (
                <Skeleton width={100} height={30} className="skeleton-shimmer" />
             ) : (
-               blogDetail?.categories.map((category, index) => (
+               blogDetail?.categories?.map((category, index) => (
                   <span key={index} className={`${getRandomStyle()} text-sm font-medium rounded-full px-4 py-1`}>
                      {category}
                   </span>
@@ -47,7 +49,7 @@ const DetailBlogComponent = ({ blogDetail, loading }) => {
                   <Skeleton count={5} height={15} className="skeleton-shimmer" />
                </>
             ) : (
-               cleanHTML && <div className="blog-detail-content" dangerouslySetInnerHTML={{ __html: cleanHTML }} />
+               cleanHTML && <div className={`blog-detail-content ${theme && "content-dark"}`} dangerouslySetInnerHTML={{ __html: cleanHTML }} />
             )}
          </div>
 
