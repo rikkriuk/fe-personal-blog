@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import FooterComponent from "./components/FooterComponent";
 import AboutPage from "./pages/AboutPage";
 import NewsletterPage from "./pages/NewsletterPage";
+import DetailPage from "./pages/DetailPage";
 
 export default function App() {
   const { theme } = useSelector((state) => state);
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/newsletter" element={<NewsletterPage />} />
+          <Route path="/blog/:id" element={<DetailPage />} />
         </Routes>
         <FooterComponent />
       </div>
